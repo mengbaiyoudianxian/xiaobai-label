@@ -1,0 +1,15 @@
+小白标注
+Copyright (c) 2026 孟白 (MengBai)
+
+小白标注是孟白的独立作品，以 Apache License 2.0 开源（见 LICENSE）。
+它的界面、交互设计和标注器由孟白独立设计、编写；后台的账号、数据存储和数据接口
+使用开源项目 Label Studio，作为依赖库安装（pip install label-studio==1.23.2），本仓库不包含其源代码。
+
+小白标注不是 Label Studio 的官方版本，与 HumanSignal 没有隶属或背书关系。
+"Label Studio" 是 HumanSignal 的商标，这里只用于说明来源。
+Label Studio 原版的声明如下（原文照录，见 NOTICE.label-studio）：
+
+    Label Studio (TM)
+    Copyright (c) 2019-2021  Heartex, Inc. All Rights Reserved.
+    Source code in this repository is licensed under the Apache License
+    Version 2.0, Please see LICENSE for more information.

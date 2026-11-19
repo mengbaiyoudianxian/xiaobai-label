@@ -1,0 +1,17 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+# 数据目录、数据库、账号文件一律不进仓库
+*.sqlite3
+TEST_LOGIN.txt
+.env
+data/
+media/
+export/
+# 示例图片不进仓库（版权要单独确认）
+*.jpg
+*.jpeg
+*.png
+!xiaobai_label/static/logo-64.png
+!xiaobai_label/static/logo-180.png

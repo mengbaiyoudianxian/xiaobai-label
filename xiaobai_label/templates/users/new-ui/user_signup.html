@@ -1,0 +1,24 @@
+{% extends 'xiaobai/page.html' %}
+{% block title %}注册{% endblock %}
+{% block body %}
+<div class="card glass rise d2"><span class="spot" aria-hidden="true"></span>
+  <h1>注册账号</h1>
+  <form action="{% url 'user-signup' %}?next={{ next }}{% if token %}&token={{ token }}{% endif %}" method="post">
+    {% csrf_token %}
+    <label for="email">账号名</label>
+    <input type="text" name="email" id="email" value="{{ user_form.data.email|default:'' }}" autocomplete="username" autofocus>
+    <div class="hint">中文、英文都行，登录时就填这个</div>
+    <label for="password">密码</label>
+    <input type="password" name="password" id="password" autocomplete="new-password">
+    {% if user_form.errors %}
+      <p class="error">
+        {% if user_form.email.errors %}{% if 'exists' in user_form.email.errors|join:' ' %}这个账号名已经有人用了，换一个{% else %}账号名不能用，换一个试试{% endif %}
+        {% elif user_form.password.errors %}请填密码
+        {% else %}注册没成功，请再试一次{% endif %}
+      </p>
+    {% endif %}
+    <button class="btn primary block" type="submit">注册并登录</button>
+  </form>
+  <div class="switch">已经有账号了？<a href="{% url 'user-login' %}{% if next %}?next={{ next }}{% endif %}">去登录</a></div>
+</div>
+{% endblock %}
